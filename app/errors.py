@@ -1,13 +1,18 @@
 class VaccineError(Exception):
-    pass
+    def __init__(self, message="There is a vaccine-related issue.") -> None:
+        super().__init__(message)
 
 
 class NotVaccinatedError(VaccineError):
-    pass
+    def __init__(self, message="The visitor is not vaccinated.") -> None:
+        super().__init__(message)
 
 
 class OutdatedVaccineError(VaccineError):
-    pass
+    def __init__(self, message="The visitor's vaccine is outdated.") -> None:
+        super().__init__(message)
+
 
 class NotWearingMaskError(Exception):
-    pass
+    def __init__(self, message="The visitor is not wearing a mask.") -> None:
+        super().__init__(message)
